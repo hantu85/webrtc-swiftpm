@@ -1,9 +1,10 @@
 # WebRTC binary for SwiftPM (unfinished)
 This project holds binaries of WebRTC framework (iOS & macOS) as releases.
 
-Since release M88 we publish WebRTC framework as XCFramework compiled for:
+Since release M122-1 we publish WebRTC framework as XCFramework compiled for:
 * iOS
-* iOS Simulator
+* iOS Simulator (Intel)
+* iOS Simulaotr (AppleSilicon)
 * macOS (Intel)
 * macOS (AppleSilicon)
 
@@ -58,7 +59,7 @@ lipo -create -output out/ios-universal-simulator/WebRTC.framework/Versions/A/Web
 ### Generating XCFramework
 ````sh
 xcodebuild -create-xcframework \
-	-framework out/ios-arm64/WebRTC.framework \
+	-framework out/ios-arm64-device/WebRTC.framework \
 	-framework out/ios-universal-simulator/WebRTC.framework \
 	-framework out/macos-universal/WebRTC.framework \
 	-output out/WebRTC.xcframework
